@@ -1,7 +1,7 @@
 import React from "react";
 // import aboutBackgroundImage from '../../Assets/Images/about-background-image.png';
-import AboutBackground from "../../Assets/Images/about-background.png";
-import AboutBackgroundImage from "../../Assets/Images/about-background-image.png";
+import AboutBackground from "../../assets/images/about-background.png";
+import AboutBackgroundImage from "../../assets/images/about-background-image.png";
 import {BsFillPlayCircleFill} from "react-icons/bs";
 
 const About = () => {

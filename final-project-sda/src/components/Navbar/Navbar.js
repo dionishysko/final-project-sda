@@ -1,13 +1,13 @@
 
 import React, {useState} from "react";
-// import Logo from "../../Assets/Images/Images.Logo.svg";
+import Logo from "../../assets/images/Logo.svg";
 import {BsCart2} from "react-icons/bs";
 import {HiOutlineBars3} from "react-icons/hi2";
 import {Box, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText,} from "@mui/material";
 import List from "@mui/material/List";
-import HomeIcon from "@mui/icons-material/Home";
+import HomeIcon from "@mui/icons-material/Home"
 import InfoIcon from "@mui/icons-material/Info";
-import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
+import CommentRoundedIcon from "@mui/icons-material/CommentRounded"
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 
@@ -44,11 +44,11 @@ const Navbar = () => {
       <img src={Logo} alt="Website Logo"/>
     </div>
     <div className="navbar-links-container">
-    <a href="">Home</a>
-    <a href="">About</a>
-    <a href="">Testimonials</a>
-    <a href="">Contact</a>
-    <a href="">
+    <a href="..">Home</a>
+    <a href="..">About</a>
+    <a href="..">Testimonials</a>
+    <a href="..">Contact</a>
+    <a href="..">
     <BsCart2 className="navbar-cart-icon"/>
     </a>
     <button className="primary-button">Book Now</button>
@@ -71,7 +71,6 @@ const Navbar = () => {
       </Box>
     </Drawer>
     </nav>
-
   );
 };
 

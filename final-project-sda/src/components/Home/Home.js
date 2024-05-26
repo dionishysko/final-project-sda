@@ -1,5 +1,5 @@
 import React from "react"
-import Navbar from "../Navbar/Navbar";
+import Navbar from "../../components/Navbar/Navbar";
 import BannerBackground from "../../assets/images/home-banner-background.png";
 import BannerImage from "../../assets/images/home-banner-image.png";
 import {FiArrowRight} from "react-icons/fi";
@@ -10,7 +10,7 @@ const Home = () => {
       <Navbar/>
         <div className="home-banner-container">
           <div className="home-bannerImage-container">
-            <img src={BannerBackground} alt="Banner Image" />
+            <img src={BannerBackground} alt="Banner" />
           </div>
           <div className="home-text-section">
               <h1 className="primary-heading">

@@ -1,5 +1,5 @@
 import React from "react"
-import Logo from "../../Assets/Images/Logo.svg";
+import Logo from "../../assets/images/Logo.svg";
 // import Logo from "../../Assets/Images/Logo.svg";
 import {BsTwitter} from "react-icons/bs";
 import {SiLinkedin} from "react-icons/si";

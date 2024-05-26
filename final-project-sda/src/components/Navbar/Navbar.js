@@ -1,6 +1,6 @@
 
 import React, {useState} from "react";
-// import Logo from "../../Assets/Images/Images.Logo.svg";
+// import Logo from "../../assets/images/Images.Logo.svg";
 import {BsCart2} from "react-icons/bs";
 import {HiOutlineBars3} from "react-icons/hi2";
 import {Box, Drawer, ListItem, ListItemButton, ListItemIcon, ListItemText,} from "@mui/material";
@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <nav>
     <div className="nav-logo-container">
-      <img src={Logo} alt="Website Logo"/>
+      <img src={""} alt="Website Logo"/>
     </div>
     <div className="navbar-links-container">
     <a href="">Home</a>

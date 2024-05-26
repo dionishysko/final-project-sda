@@ -1,5 +1,5 @@
 import React from "react";
-import ProfilePic from "../../Assets/Images/john-doe-image.png";
+import ProfilePic from "../../assets/images/john-doe-image.png";
 import {AiFillStar} from "react-icons/ai";
 
 

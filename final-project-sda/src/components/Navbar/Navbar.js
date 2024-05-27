@@ -41,14 +41,14 @@ const Navbar = () => {
   return (
     <nav>
     <div className="nav-logo-container">
-      <img src={""} alt="Website Logo"/>
+      <img src={Logo} alt="Website Logo"/>
     </div>
     <div className="navbar-links-container">
-    <a href="..">Home</a>
-    <a href="..">About</a>
-    <a href="..">Testimonials</a>
-    <a href="..">Contact</a>
-    <a href="..">
+    <a href="">Home</a>
+    <a href="">About</a>
+    <a href="">Testimonials</a>
+    <a href="">Contact</a>
+    <a href="">
     <BsCart2 className="navbar-cart-icon"/>
     </a>
     <button className="primary-button">Book Now</button>
@@ -71,8 +71,8 @@ const Navbar = () => {
       </Box>
     </Drawer>
     </nav>
+
   );
 };
-
 
 export default Navbar;

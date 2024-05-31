@@ -1,0 +1,129 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-banner-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px 0;
+  background-color: #fff; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.home-bannerImage-container {
+  flex: 1;
+}
+
+.home-bannerImage-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.home-text-section {
+  flex: 1;
+  padding: 40px;
+}
+
+.home-text-section h1.primary-heading {
+  font-size: 2.5rem;
+  color: #ff6347; 
+  margin-bottom: 20px;
+}
+
+.home-text-section p.primary-text {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.home-text-section button.secondary-button {
+  display: flex;
+  align-items: center;
+  background-color: #ff6347; 
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-text-section button.secondary-button svg {
+  margin-left: 10px;
+}
+
+.home-text-section button.secondary-button:hover {
+  background-color: #e5533d;
+}
+
+.home-image-container {
+  flex: 1;
+}
+
+.home-image-container img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .home-banner-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-text-section {
+    padding: 20px;
+  }
+
+  .home-text-section h1.primary-heading {
+    font-size: 2rem;
+  }
+
+  .home-text-section p.primary-text {
+    font-size: 0.9rem;
+  }
+
+  .home-text-section button.secondary-button {
+    justify-content: center;
+  }
+
+  .home-bannerImage-container,
+  .home-image-container {
+    width: 100%;
+    flex: none;
+  }
+}
+.secondary-button {
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .home-text-section {
+    padding: 10px;
+  }
+
+  .home-text-section h1.primary-heading {
+    font-size: 1.5rem;
+  }
+
+  .home-text-section p.primary-text {
+    font-size: 0.8rem;
+  }
+
+  .home-text-section button.secondary-button {
+    padding: 8px 16px;
+  }
+}
+

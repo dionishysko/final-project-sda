@@ -7,6 +7,58 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Shtoni këto media queries për celular dhe madhësi më të vogël */
+@media (max-width: 768px) {
+  .footer-wrapper {
+    padding: 20px 10px;
+  }
+
+  .footer-section-one {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  .footer-logo-container {
+    margin-bottom: 20px;
+  }
+
+  .footer-icons {
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .footer-section-two {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section-columns {
+    margin: 10px 0;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .footer-wrapper {
+    padding: 15px 5px;
+  }
+
+  .footer-section-one {
+    align-items: center;
+  }
+
+  .footer-icons {
+    gap: 5px;
+  }
+
+  .footer-section-columns {
+    margin: 5px 0;
+  }
+}
+
 .footer-section-one {
   display: flex;
   justify-content: space-between;

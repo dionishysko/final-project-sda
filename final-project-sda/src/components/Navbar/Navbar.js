@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Logo from "../../assets/images/foodhub.png";
 import { BsCart2 } from "react-icons/bs";
 import { HiOutlineBars3 } from "react-icons/hi2";
@@ -20,6 +21,11 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import Home from "../Home/Home";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
+import Testimonial from "../Testimonial/Testimonial";
+import Order from "../Order/Order";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -28,73 +34,88 @@ const Navbar = () => {
     {
       text: "HOME",
       icon: <HomeIcon />,
+      link: "/home",
+      component: Home,
     },
     {
       text: "About",
       icon: <InfoIcon />,
+      link: "/about",
+      component: About,
     },
     {
       text: "Testimonials",
       icon: <CommentRoundedIcon />,
+      link: "/testimonials",
+      component: Testimonial,
     },
     {
       text: "Contact",
       icon: <PhoneRoundedIcon />,
+      link: "/contact",
+      component: Contact,
     },
     {
       text: "Cart",
       icon: <ShoppingCartRoundedIcon />,
+      link: "/cart",
+      component: Order,
     },
   ];
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "white", color: "orange" }}>
-      <Toolbar>
-        <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
-          <img src={Logo} className="logo-1" alt="Website Logo" style={{ height: '40px', marginRight: '20px' }} />
-        </Box>
-        <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
-          <Button href=".." sx={{ color: 'orange' }}>Home</Button>
-          <Button href=".." sx={{ color: 'orange' }}>About</Button>
-          <Button href=".." sx={{ color: 'orange' }}>Testimonials</Button>
-          <Button href=".." sx={{ color: 'orange' }}>Contact</Button>
-          <IconButton href=".." sx={{ color: 'orange' }}>
-            <BsCart2 className="navbar-cart-icon" />
-          </IconButton>
-          <Button variant="contained" sx={{ backgroundColor: 'orange', color: 'white', marginLeft: '10px' }}>
-            Book Now
-          </Button>
-        </Box>
-        <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
-          sx={{ display: { xs: 'flex', md: 'none' } }}
-          onClick={() => setOpenMenu(true)}
-        >
-          <HiOutlineBars3 />
-        </IconButton>
-      </Toolbar>
-      <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
-        <Box
-          sx={{ width: 250 }}
-          role="presentation"
-          onClick={() => setOpenMenu(false)}
-          onKeyDown={() => setOpenMenu(false)}
-        >
-          <List>
+    <Router>
+      <AppBar position="static" sx={{ backgroundColor: "white", color: "orange" }}>
+        <Toolbar>
+          <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
+            <img src={Logo} className="logo-1" alt="Website Logo" style={{ height: '40px', marginRight: '20px' }} />
+          </Box>
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}>
             {menuOptions.map((item) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon sx={{ color: 'orange' }}>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} sx={{ color: 'orange' }} />
-                </ListItemButton>
-              </ListItem>
+              <Button key={item.text} component={Link} to={item.link} sx={{ color: 'orange' }}>
+                {item.text}
+              </Button>
             ))}
-          </List>
-        </Box>
-      </Drawer>
-    </AppBar>
+            <IconButton href=".." sx={{ color: 'orange' }}>
+              <BsCart2 className="navbar-cart-icon" />
+            </IconButton>
+          </Box>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="menu"
+            sx={{ display: { xs: 'flex', md: 'none' } }}
+            onClick={() => setOpenMenu(true)}
+          >
+            <HiOutlineBars3 />
+          </IconButton>
+        </Toolbar>
+        <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
+          <Box
+            sx={{ width: 250 }}
+            role="presentation"
+            onClick={() => setOpenMenu(false)}
+            onKeyDown={() => setOpenMenu(false)}
+          >
+            <List>
+              {menuOptions.map((item) => (
+                <ListItem key={item.text} disablePadding>
+                  <ListItemButton component={Link} to={item.link}>
+                    <ListItemIcon sx={{ color: 'orange' }}>{item.icon}</ListItemIcon>
+                    <ListItemText primary={item.text} sx={{ color: 'orange' }} />
+                  </ListItemButton>
+                </ListItem>
+              ))}
+            </List>
+          </Box>
+        </Drawer>
+      </AppBar>
+      <Routes>
+        {menuOptions.map((item) => (
+          <Route key={item.text} path={item.link} element={<item.component />} />
+        ))}
+      </Routes>
+    </Router>
   );
 };
 

@@ -2,13 +2,13 @@ import React from "react";
 import BannerBackground from "../../assets/images/home-banner-background.png";
 import BannerImage from "../../assets/images/home-banner-image.png";
 
-import { BrowserRouter as Router, Link,Route,Routes } from "react-router-dom";
+import {Link,Route,Routes } from "react-router-dom";
 import Order from "../Order/Order";
 import "./Home.css";
 
 const Home = () => {
   return (
-    <Router>
+    <>
       <div className="home-container">
         <div className="home-banner-container">
           <div className="home-bannerImage-container">
@@ -34,8 +34,10 @@ const Home = () => {
       <Routes>
             <Route path="/booknow" exact Component={Order}/>
         </Routes>
-        </Router>
+      </>
+        
   );
+  
 };
 
 export default Home;

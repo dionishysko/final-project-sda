@@ -26,11 +26,17 @@ import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Testimonial from "../Testimonial/Testimonial";
 import Order from "../Order/Order";
+import CombineHome from "../CombineHome";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);  
   const menuOptions = [
+    {
+      text: "",
+      link: "/",
+      component: CombineHome,
+    },
     {
       text: "HOME",
       icon: <HomeIcon />,

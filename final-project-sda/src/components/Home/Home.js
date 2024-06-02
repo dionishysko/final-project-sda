@@ -22,7 +22,7 @@ const Home = () => {
               Our chefs do all the prep work like chopping, seasoning,
               and marinating so you can enjoy fresh food.
             </p>
-            <Link to="/booknow" className="secondary-button">
+            <Link to="/cart" component={Order} className="secondary-button">
               Order Now 
             </Link>
           </div>
@@ -32,8 +32,8 @@ const Home = () => {
         </div>
       </div>
       <Routes>
-            <Route path="/booknow" exact Component={Order}/>
-        </Routes>
+            <Route path="/cart" exact Component={Order}/>
+      </Routes>
       </>
         
   );

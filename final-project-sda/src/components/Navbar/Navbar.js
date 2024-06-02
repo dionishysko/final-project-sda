@@ -21,7 +21,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-import Home from "../Home/Home";
+// import Home from "../Home/Home";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Testimonial from "../Testimonial/Testimonial";
@@ -33,15 +33,10 @@ const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);  
   const menuOptions = [
     {
-      text: "",
-      link: "/",
-      component: CombineHome,
-    },
-    {
       text: "HOME",
       icon: <HomeIcon />,
-      link: "/home",
-      component: Home,
+      link: "/",
+      component: CombineHome,
     },
     {
       text: "About",

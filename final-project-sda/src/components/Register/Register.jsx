@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import users from '../../db/users.json';
 import { useNavigate } from 'react-router-dom';
+import './Register.css'; // Import the CSS file
 
 const Register = ({setRegister}) => {
   const navigate = useNavigate()
@@ -10,7 +11,7 @@ const Register = ({setRegister}) => {
     password: '',
     confirmPassword: ''
   });
-//  localStorage.setItem('users',[]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -21,17 +22,32 @@ const Register = ({setRegister}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Your registration logic here
+  
+    // Password validation regex
+    const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
+  
+    // Check if passwords match and meet the regex criteria
+    if (formData.password !== formData.confirmPassword) {
+      alert("Passwords don't match!");
+      return;
+    } else if (!passwordRegex.test(formData.password)) {
+      alert(
+        'Password must contain at least 8 characters, including at least one uppercase letter, one lowercase letter, and one number.'
+      );
+      return;
+    }
+  
+    // Proceed with the registration logic
     const data = JSON.parse(localStorage.getItem('users') || '[]');
     data.push(formData);
     localStorage.setItem('users', JSON.stringify(data));
-    console.log('Registration data:', users);
-    setRegister(false)
-    navigate('/')
+    console.log('Registration data:', data);
+    setRegister(false);
+    navigate('/');
   };
 
   return (
-    <form style={{backgroundColor:'black'}} onSubmit={handleSubmit}>
+    <form className="register-form" onSubmit={handleSubmit}>
       <h2>Register</h2>
       <div>
         <label htmlFor="username">Username:</label>
@@ -45,7 +61,7 @@ const Register = ({setRegister}) => {
         />
       </div>
       <div>
-        <label  htmlFor="email">Email:</label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"

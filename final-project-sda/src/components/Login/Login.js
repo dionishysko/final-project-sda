@@ -13,9 +13,6 @@ const Login = ({setIsLogged, setRegister}) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/;
 
-  // const localUsers = JSON.parse(localStorage.getItem('users')) || []
-  // const allUsers = [...users, ...localUsers]
-  // console.log(allUsers)
   const handleLogin = (event) => {
     event.preventDefault();
 

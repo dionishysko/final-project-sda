@@ -2,7 +2,7 @@ import React from "react";
 import BannerBackground from "../../assets/images/home-banner-background.png";
 import BannerImage from "../../assets/images/home-banner-image.png";
 
-import { BrowserRouter as Router, Link,Route,Routes } from "react-router-dom";
+import { Link,Route,Routes } from "react-router-dom";
 import Order from "../Order/Order";
 import "./Home.css";
 

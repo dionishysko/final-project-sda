@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Login.css';
-import users from '../../db/users.json';
-import { BrowserRouter as Router,Link} from 'react-router-dom';
+// import users from '../../db/users.json';
+import {Link} from 'react-router-dom';
 
 const Login = ({setIsLogged, setRegister}) => {
   const [email, setEmail] = useState('');
@@ -35,7 +35,7 @@ const Login = ({setIsLogged, setRegister}) => {
       return;
     }
     console.log(passwordRegex.test(password))
-    const localUsers = JSON.parse(localStorage.getItem('users')) || []
+    const localUsers = JSON.parse(localStorage.getItem('users') || '[]');
   // const allUsers = [...users, ...localUsers]
 
     const user = localUsers.find((user) => user.email === email && user.password === password);

@@ -76,7 +76,7 @@ const Navbar = () => {
   return (
 
 <Router>
-  <Logout/>
+  {isLogged &&<Logout/>}
 {(!isLogged && !loggedUser && !register) && <Login setIsLogged={setIsLogged} setRegister={setRegister} />}
 
 

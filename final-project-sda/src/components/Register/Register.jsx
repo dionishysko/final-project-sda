@@ -10,7 +10,7 @@ const Register = ({setRegister}) => {
     password: '',
     confirmPassword: ''
   });
- 
+//  localStorage.setItem('users',[]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -22,9 +22,9 @@ const Register = ({setRegister}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Your registration logic here
-    const data = JSON.parse(localStorage.getItem('users'))
-    data.push(formData)
-    localStorage.setItem('users', JSON.stringify(data))
+    const data = JSON.parse(localStorage.getItem('users') || '[]');
+    data.push(formData);
+    localStorage.setItem('users', JSON.stringify(data));
     console.log('Registration data:', users);
     setRegister(false)
     navigate('/')

@@ -1,9 +1,15 @@
+/* body{
+  background: url('../../assets/images/foodLogIn\ \(2\).jpeg') no-repeat center center;
+    background-size: auto;
+  
+} */
 .order-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin-top: 70px; 
+    
   }
   
   .order-paper {

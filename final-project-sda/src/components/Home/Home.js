@@ -2,7 +2,7 @@ import React from "react";
 import BannerBackground from "../../assets/images/home-banner-background.png";
 import BannerImage from "../../assets/images/home-banner-image.png";
 
-import {Link,Route,Routes } from "react-router-dom";
+import { BrowserRouter as Router, Link,Route,Routes } from "react-router-dom";
 import Order from "../Order/Order";
 import "./Home.css";
 
@@ -22,7 +22,7 @@ const Home = () => {
               Our chefs do all the prep work like chopping, seasoning,
               and marinating so you can enjoy fresh food.
             </p>
-            <Link to="/cart" component={Order} className="secondary-button">
+            <Link to="/booknow" className="secondary-button">
               Order Now 
             </Link>
           </div>
@@ -32,12 +32,10 @@ const Home = () => {
         </div>
       </div>
       <Routes>
-            <Route path="/cart" exact Component={Order}/>
-      </Routes>
+            <Route path="/booknow" exact Component={Order}/>
+        </Routes>
       </>
-        
-  );
-  
+    );
 };
 
 export default Home;

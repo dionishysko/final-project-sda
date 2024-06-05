@@ -1,24 +1,14 @@
 import "./App.css";
-import Navbar  from "./components/Navbar/Navbar";
-// import Home from "../src/components/Home/Home";
-// import About from "../src/components/About/About";
-// import Contact from "../src/components/Contact/Contact";
-// import Testimonial from "./components/Testimonial/Testimonial";
-// import Footer from "../src/components/Footer/footer";
-// import Work from "../src/components/Work/Work";
+
+// import Login from "./components/Login/Login";
+import Navbar from "./components/Navbar/Navbar";
 
 
 function App() {
   return (
     <div className="App">
+      {/* <Login/> */}
       <Navbar/>
-      {/* <Home/>
-      <About/>
-      <Testimonial/>
-      <Contact/>
-      <Work/>
-      <Footer/> */}
-
     </div>
   );
 }

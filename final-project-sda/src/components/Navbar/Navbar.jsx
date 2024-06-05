@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Link, Routes } from "react-router-dom";
 import Logo from "../../assets/images/foodhub.png";
 import { BsCart2 } from "react-icons/bs";
@@ -21,7 +21,6 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-// import Home from "../Home/Home";
 import About from "../About/About";
 import Contact from "../Contact/Contact";
 import Testimonial from "../Testimonial/Testimonial";
@@ -33,13 +32,18 @@ import Register from "../Register/Register";
 import Logout from "../Logout";
 
 const Navbar = () => {
+  const [openMenu, setOpenMenu] = useState(false);
+  const [isLogged, setIsLogged] = useState(false);
+  const [register, setRegister] = useState(false);
 
+  const loggedUser = localStorage.getItem('logged_user');
 
-  const [openMenu, setOpenMenu] = useState(false); 
-  const [isLogged, setIsLogged] = useState(false)
-  const [register, setRegister] = useState(false)
+  useEffect(() => {
+    if (loggedUser) {
+      setIsLogged(true);
+    }
+  }, [loggedUser]);
 
-  const loggedUser = localStorage.getItem('logged_user')
   const menuOptions = [
     {
       text: "HOME",
@@ -70,17 +74,14 @@ const Navbar = () => {
       icon: <ShoppingCartRoundedIcon />,
       link: "/cart",
       component: Order,
-    }
+    },
   ];
 
   return (
-
-<Router>
-  {isLogged &&<Logout/>}
-{(!isLogged && !loggedUser && !register) && <Login setIsLogged={setIsLogged} setRegister={setRegister} />}
-
-
-      {register && <Register setRegister={setRegister} />}
+    <Router>
+      {isLogged && <Logout />}
+      {!isLogged && !register && <Login setIsLogged={setIsLogged} setRegister={setRegister} />}
+      {!isLogged && register && <Register setRegister={setRegister} />}
 
       {(isLogged || loggedUser) && (
         <>
@@ -125,7 +126,6 @@ const Navbar = () => {
                       </ListItemButton>
                     </ListItem>
                   ))}
-               
                 </List>
               </Box>
             </Drawer>
@@ -134,7 +134,6 @@ const Navbar = () => {
             {menuOptions.map((item) => (
               <Route key={item.text} path={item.link} element={<item.component />} />
             ))}
-          
           </Routes>
         </>
       )}

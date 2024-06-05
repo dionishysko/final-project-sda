@@ -88,7 +88,7 @@ const Login = ({setIsLogged, setRegister}) => {
           <button type="submit">Log In</button>
         </form>
         {message && (
-          <p className={isError? 'error-message' : 'uccess-message'}>
+          <p className={isError? 'error-message' : 'success-message'}>
             {message}
           </p>
         )}

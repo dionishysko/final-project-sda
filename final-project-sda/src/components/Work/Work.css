@@ -1,0 +1,67 @@
+.work-section-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 20px auto;
+  }
+  
+  .work-section-top {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .primary-subheading {
+    color: orange;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .primary-heading {
+    color: black;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .primary-text {
+    color: grey;
+    margin-bottom: 20px;
+  }
+  
+  .work-section-bottom {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .work-section-info {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    margin: 10px;
+    width: 250px;
+  }
+  
+  .info-boxes-img-container img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 20px;
+  }
+  
+  .work-section-info h6 {
+    font-size: 1.5rem;
+    color: #ff6347; /* Ngjyra portokalli për titullin */
+    margin-bottom: 10px;
+  }
+  
+  .work-section-info p {
+    color: #333;
+    font-size: 1rem;
+  }

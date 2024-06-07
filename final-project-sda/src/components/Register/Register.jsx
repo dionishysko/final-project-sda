@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-// import users from '../../db/users.json';
+
 import { useNavigate } from 'react-router-dom';
 import './Register.css'; // Import the CSS file
 
 const Register = ({setRegister}) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: '',
     email: '',

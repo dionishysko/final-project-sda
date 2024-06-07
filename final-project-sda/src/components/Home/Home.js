@@ -22,7 +22,7 @@ const Home = () => {
               Our chefs do all the prep work like chopping, seasoning,
               and marinating so you can enjoy fresh food.
             </p>
-            <Link to="/booknow" className="secondary-button">
+            <Link to="/cart" className="secondary-button">
               Order Now 
             </Link>
           </div>

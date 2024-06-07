@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import './Logout.css';
+
 
 const Logout = () => {
     localStorage.setItem('users',JSON.stringify([
@@ -12,7 +14,7 @@ const Logout = () => {
      window.location.reload()
     }
   return (
-    <button onClick={handleLogout}>
+    <button className="Logbutton" onClick={handleLogout}>
       Log Out
     </button>
   )

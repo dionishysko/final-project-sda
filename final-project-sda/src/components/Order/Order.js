@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { TextField, Button, Typography, Container, Paper, Dialog, DialogTitle, DialogContent, DialogActions } from "@mui/material";
 import "./Order.css";
 
+
 const Order = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [formData, setFormData] = useState({
@@ -27,7 +28,7 @@ const Order = () => {
     if (firstName && lastName && phoneNumber && city && neighborhood && order) {
       setOpenDialog(true);
     } else {
-      alert("Plotesimi i ketij textfield eshte i detyruar");
+      alert("Plotesimi i te gjitha textfieldeve eshte i detyruar");
     }
   };
 
@@ -48,6 +49,7 @@ const Order = () => {
   };
 
   return (
+    
     <Container maxWidth="sm" className="order-container">
       <Paper elevation={3} className="order-paper">
         <Typography variant="h4" align="center" gutterBottom>
@@ -132,7 +134,7 @@ const Order = () => {
         </DialogActions>
       </Dialog>
     </Container>
+  
   );
 };
-
 export default Order;

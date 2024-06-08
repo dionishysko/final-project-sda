@@ -30,7 +30,6 @@ import "./Navbar.css";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
 import Logout from "../Logout";
-
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
   const [isLogged, setIsLogged] = useState(false);
